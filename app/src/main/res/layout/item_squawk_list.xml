@@ -10,6 +10,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -37,6 +38,7 @@
         android:paddingLeft="8dp"
         android:paddingStart="8dp"
         android:textColor="@color/colorText"
+        tools:text="sample author"
         android:textSize="14sp" />
 
     <TextView
@@ -45,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/author_text_view"
         android:textColor="@color/colorSecondaryText"
+        tools:text="sample date"
         android:textStyle="italic" />
 
 
@@ -58,6 +61,7 @@
         android:paddingLeft="8dp"
         android:paddingStart="8dp"
         android:textColor="@color/colorText"
+        tools:text="sample message"
         android:textSize="14sp" />
 
 </RelativeLayout>
