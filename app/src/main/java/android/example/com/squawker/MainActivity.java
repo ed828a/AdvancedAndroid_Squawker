@@ -34,6 +34,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import static android.example.com.squawker.provider.SquawkContract.LYLA_KEY;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -85,6 +90,18 @@ public class MainActivity extends AppCompatActivity implements
 
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey(LYLA_KEY)){
+            Toast.makeText(this,
+                    "Received the notification to " + extras.getString(LYLA_KEY),
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        // Get token from the ID Service you created and show it in a log
+        String token = FirebaseInstanceId.getInstance().getToken();
+        String msg = getString(R.string.message_token_format, token);
+        Log.d(LOG_TAG, msg);
 
     }
 
