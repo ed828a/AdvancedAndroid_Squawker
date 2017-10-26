@@ -19,6 +19,7 @@ package android.example.com.squawker;
 import android.content.Intent;
 import android.database.Cursor;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
+import android.example.com.squawker.following.FollowingPreferenceFragment;
 import android.example.com.squawker.provider.SquawkContract;
 import android.example.com.squawker.provider.SquawkProvider;
 import android.os.Bundle;
@@ -103,6 +104,8 @@ public class MainActivity extends AppCompatActivity implements
         String msg = getString(R.string.message_token_format, token);
         Log.d(LOG_TAG, msg);
 
+        // initialize the following to the default values
+        FollowingPreferenceFragment.setupFollowings(this);
     }
 
     @Override
