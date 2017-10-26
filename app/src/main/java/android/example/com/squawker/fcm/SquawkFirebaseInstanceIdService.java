@@ -15,7 +15,7 @@ public class SquawkFirebaseInstanceIdService extends FirebaseInstanceIdService {
     @Override
     public void onTokenRefresh() {
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d(LOG_TAG, "Refreshed toaken: " + refreshedToken);
+        Log.d(LOG_TAG, "Refreshed token: " + refreshedToken);
 
 
         sendRegistrationToServer(refreshedToken);
